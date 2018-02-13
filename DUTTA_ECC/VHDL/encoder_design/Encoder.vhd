@@ -1,23 +1,21 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Microelectronic Systems Design Research Group
 -- Engineer: Nkrumah Offonry
--- 
 -- Create Date:    11:30:39 06/30/2017 
--- Design Name: 
+-- Design Name:   Dutta SEC-DED-DAEC code
 -- Module Name:   Encoder - Behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: Kintex-7 FPGA Family, Zynq Ultrascale & Ultrascale+
 -- Tool versions: 
--- Description: This module is the Encoder block that takes takes a 64 bit data word as
+-- Description: This module is an Encoder block that takes takes a 64 bit data word as
 --		input, encodes it and outputs a 64 bit data word and an additional 
 --		8 check(parity) bits.
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
+
+-- Additional Comments: This encoder is designed to be completely combinational in nature
+--			i.e, the encoding process for does not introduce any extra 
+--			clock cycles to the entire design.
 ----------------------------------------------------------------------------------
+
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 use IEEE.MATH_REAL.ALL;
@@ -33,7 +31,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity Encoder is
     Port ( data_in_enc : in  STD_LOGIC_VECTOR(63 downto 0);
            checkbits_out : out STD_LOGIC_VECTOR(7 downto 0);
-	       data_out_enc : out STD_LOGIC_VECTOR(63 downto 0));
+	   data_out_enc : out STD_LOGIC_VECTOR(63 downto 0));
 end Encoder; 
 
 architecture Behavioral of Encoder is
@@ -56,6 +54,6 @@ enc_checkbits(6) <= xor(enc_in and "10111001100000101010010010000101100010011001
 enc_checkbits(7) <= xor(enc_in and "1001010111010110010100100100001011000100110010001101000011100000");
 	 
 checkbits_out <= enc_checkbits;
-data_out_enc<= enc_in;
+data_out_enc  <= enc_in;
 
 END Behavioral;
