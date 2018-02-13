@@ -1,20 +1,16 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Microelectronic Systems Design Research Group
 -- Engineer: Nkrumah Offonry
 -- 
 -- Create Date:    12:34:03 07/27/2017 
 -- Design Name: 
 -- Module Name:    N_encoders - Behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: Kintex-7 FPGA Family, Zynq Ultrascale & Ultrascale+
 -- Tool versions: 
 -- Description: Module to instatiate n Encoders. 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+--		For DIMM-based memory archictectures, Burst_length of 8 (64 bits p/burst)
+-- 		Thus, 512 bits of data written to memory p/clk
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -55,20 +51,20 @@ begin
 	Encoder2 : Encoder_Top Port map ( 
    					 encin => n_encin(127 downto 64), 
    					 parout => n_chk_out(15 downto 8),
-    			     encout => n_encout(127 downto 64) 
-                     );
+    			    		 encout => n_encout(127 downto 64) 
+                    			 );
    
 	Encoder3 : Encoder_Top Port map (
-     				 encin => n_encin(191 downto 128), 
-     				 parout => n_chk_out(23 downto 16),
-     				 encout => n_encout(191 downto 128) 
-     				 );
+     					 encin => n_encin(191 downto 128), 
+     					 parout => n_chk_out(23 downto 16),
+     					 encout => n_encout(191 downto 128) 
+     					 );
 
         Encoder4 : Encoder_Top Port map ( 
-     				 encin => n_encin(255 downto 192), 
-     				 parout => n_chk_out(31 downto 24),
-      				 encout => n_encout(255 downto 192) 
-  					 );
+     					encin => n_encin(255 downto 192), 
+     					parout => n_chk_out(31 downto 24),
+      				 	encout => n_encout(255 downto 192) 
+  				 	);
 
 	Encoder5 : Encoder_Top Port map (
 					 encin => n_encin(319 downto 256), 
@@ -79,20 +75,20 @@ begin
 	Encoder6 : Encoder_Top Port map (
    					 encin => n_encin(383 downto 320), 
    					 parout => n_chk_out(47 downto 40),
-    				 encout => n_encout(383 downto 320) 
-    				 );
+    				 	 encout => n_encout(383 downto 320) 
+    					);
 
         Encoder7 : Encoder_Top Port map (
-    		         encin => n_encin(447 downto 384), 
-    		         parout => n_chk_out(55 downto 48),
-                     encout => n_encout(447 downto 384) 
-   					 );
+    		       			encin => n_encin(447 downto 384), 
+    		       			parout => n_chk_out(55 downto 48),
+                     			encout => n_encout(447 downto 384) 
+   					);
      
 	Encoder8 : Encoder_Top Port map (
-     				 encin => n_encin(511 downto 448), 
-    				 parout => n_chk_out(63 downto 56),
-   					 encout => n_encout(511 downto 448) 
-   					 );
+     				 	encin => n_encin(511 downto 448), 
+    				 	parout => n_chk_out(63 downto 56),
+   					encout => n_encout(511 downto 448) 
+   					);
 
 end Behavioral;
 
