@@ -1,21 +1,16 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company: Microelectronic Systems Design Research Group
 -- Engineer: Nkrumah Offonry
--- 
 -- Create Date:    11:52:56 07/03/2017 
--- Design Name: 
 -- Module Name:    Decoder - Behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: Kintex-7 FPGA Family, Zynq Ultrascale & Ultrascale+
 -- Tool versions: 
 -- Description: Decoder module that takes as input 64 data bits and 8 check bits 
---		Calculates syndrome and corrects single or double adjacent bit errors
---		Outputs 64 bit data word.
--- Dependencies: 
+--		Calculates syndrome and corrects single and/or double adjacent bit errors
+--		Outputs 64 bit data word
 --
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Additional Comments: Decoder module is combinational
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -33,10 +28,10 @@ use IEEE.MATH_REAL.ALL;
 --use UNISIM.VComponents.all;
 
 entity Decoder is
-	Port(   data_in_dec : in  STD_LOGIC_VECTOR (63 downto 0);
-             checkbits_in : in STD_LOGIC_VECTOR (7 downto 0);
-              error_type : out STD_LOGIC_VECTOR(1 downto 0);
-             data_out_dec : out  STD_LOGIC_VECTOR (63 downto 0));
+	Port(  data_in_dec : in  STD_LOGIC_VECTOR (63 downto 0);
+               checkbits_in : in STD_LOGIC_VECTOR (7 downto 0);
+               error_type : out STD_LOGIC_VECTOR(1 downto 0);
+               data_out_dec : out  STD_LOGIC_VECTOR (63 downto 0));
 end Decoder;
 
 architecture Behavioral of Decoder is
