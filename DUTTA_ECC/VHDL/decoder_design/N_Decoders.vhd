@@ -5,7 +5,7 @@
 -- Module Name:    N_Decoders - Behavioral
 -- Target Devices: Kintex-7 FPGA Family, Zynq Ultrascale & Ultrascale+
 -- Description: Module to instantiate n decoders
--- Additional Comments: For DIMM-based memory archictectures, Burst_length of 8 (64 bits p/burst)
+-- Additional Comments: For this design, Burst_length of 8 (64 bits p/burst)
 -- 			Thus, 512 bits of data read from memory 
 --
 ----------------------------------------------------------------------------------
