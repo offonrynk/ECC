@@ -1,20 +1,13 @@
 ----------------------------------------------------------------------------------
--- Company: 
+-- Company:  Microelectronic Systems Design Research Group
 -- Engineer: Nkrumah Offonry
 -- 
 -- Create Date:    11:26:34 07/26/2017 
--- Design Name: 
 -- Module Name:    Encoder_Top - Behavioral 
 -- Project Name: 
--- Target Devices: 
+-- Target Devices: Kintex-7 FPGA Family, Zynq Ultrascale & Ultrascale+
 -- Tool versions: 
--- Description: Top File for Encoder Module
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
+-- Description: Top File for Dutta Encoder Module
 --
 ----------------------------------------------------------------------------------
 library IEEE;
@@ -39,13 +32,13 @@ architecture Behavioral of Encoder_Top is
 
 component Encoder
 		Port (  data_in_enc : in  STD_LOGIC_VECTOR(63 downto 0);
-           checkbits_out : out STD_LOGIC_VECTOR(7 downto 0);
-	       data_out_enc : out STD_LOGIC_VECTOR(63 downto 0));
+           		checkbits_out : out STD_LOGIC_VECTOR(7 downto 0);
+	       		data_out_enc : out STD_LOGIC_VECTOR(63 downto 0));
 end component;
 begin
  Encoder_inst : Encoder
 	port map( data_in_enc => encin,
-		      checkbits_out => parout,
-		      data_out_enc => encout        
-		      );
+		  checkbits_out => parout,
+		  data_out_enc => encout        
+		);
 end Behavioral;
