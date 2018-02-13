@@ -9,8 +9,8 @@
 -- Target Devices: Kintex-7 FPGA Family, Zynq Ultrascale & Ultrascale+
 -- Tool versions: 
 -- Description: Module to instatiate n Encoders. 
---		For DIMM-based memory archictectures, Burst_length of 8 (64 bits p/burst)
--- 		Thus, 512 bits of data written to memory p/clk
+--		For this design, Burst_length of 8 (64 bits p/burst)
+-- 		Thus, 512 bits of data written to memory p/wr
 --
 ----------------------------------------------------------------------------------
 library IEEE;
