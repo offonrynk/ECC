@@ -1,4 +1,0 @@
--- VHDL implementation of a (72, 64) SEC-DED-DAEC-TAED code
--- Code corrects randomly scattered single bit errors and adjacent double bit errors
--- Detects random double bit errors as well as adjacent triple bit errors
--- Reduced miscorrection probability due to syndrome computation method

@@ -1,3 +1,0 @@
--- VHDL implementation of a (74, 64) SEC-DED-DAEC-6AED code
--- Code corrects randomly scattered single bit errors and adjacent double bit errors
--- Detects random double bit errors as well as six adjacent bit errors
